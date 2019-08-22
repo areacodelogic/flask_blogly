@@ -3,15 +3,14 @@
 {% block content %}
 
 <h1>Users</h1>
-<br>
 <ul>
     {% for user in users %}
-    <li>
+    <li style="list-style-type: none;"><i class="fas fa-angle-double-right"></i>
         <a href="/users/{{user.id}}">{{user.full_name()}}</a>
     </li>
     {% endfor %}
 
-<p>
+<p class="py-2">
     <a href="/users/new">
     <button class="btn btn-secondary">
         Add User

@@ -1,35 +1,44 @@
-{% extends 'base.html' %}
-
-
-{% block content  %}
+{% extends 'base.html' %} {% block content %}
 
 <h1 class="my-5">Edit users</h1>
 
-<form class="col-4" method="POST" action="/users/{{user.id}}/edit">
-  <div class="form-group">
+<form class="col-4" method="POST" action="/users/{{ user.id }}/edit">
+  <div class="form-group row">
     <label for="first_name">First Name</label>
-    <input type="text" class="form-control" id="first_name" name="first_name"  value="{{user.first_name}}">
+    <input
+      type="text"
+      class="form-control"
+      id="first_name"
+      name="first_name"
+      value="{{ user.first_name }}"
+    />
   </div>
-  <div class="form-group">
+  <div class="form-group row">
     <label for="last_name">Last Name</label>
-    <input type="text" class="form-control" id="last_name" name="last_name" value="{{user.last_name}}">
+    <input
+      type="text"
+      class="form-control"
+      id="last_name"
+      name="last_name"
+      value="{{ user.last_name }}"
+    />
   </div>
 
-  <div class="form-group">
+  <div class="form-group row">
     <label for="url_image">Url Image</label>
-    <input type="text" class="form-control" id="url_image" name="url_image" value="{{user.image_url}}">
+    <input
+      type="text"
+      class="form-control"
+      id="url_image"
+      name="url_image"
+      value="{{ user.image_url }}"
+    />
   </div>
 
-<div>
-    <a href="/users">
-        <button form="cancel" type="submit" class="btn btn-outline-primary">Cancel</button>
-    </a>
-    
-    
+  <div class="form-group text-right">
+    <a href="/users" class="btn btn-outline-info">Cancel</a>
     <button type="submit" class="btn btn-success">Save</button>
-</div>
-
-      
+  </div>
 </form>
 
-{% endblock  %}
+{% endblock %}
