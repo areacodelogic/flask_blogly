@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="my-5">Edit Post</h1>
+
+<form class="col-4" method="POST" action="/posts/{{ post.id }}/edit">
+  <div class="form-group row">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      value= '{{ post.title }}'
+    />
+  </div>
+  <div class="form-group row">
+    <label for="content">Content</label>
+    <input
+      type="text"
+      class="form-control"
+      id="content"
+      name="content"
+      value="{{ post.content }}"
+    />
+  </div>
+
+  <div class="form-group text-right">
+    <a href="/users" class="btn btn-outline-info">Cancel</a>
+    <button type="submit" class="btn btn-success">Edit</button>
+  </div>
+</form>
+
+{% endblock %}
